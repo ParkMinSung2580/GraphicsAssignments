@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\AdminStar\Desktop\GraphicsAssignments\student\a2\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\AdminStar\Desktop\GraphicsAssignments\support\image.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\AdminStar\Desktop\GraphicsAssignments\student\a2\scene.frag">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\AdminStar\Desktop\GraphicsAssignments\student\a2\scene.vert">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\AdminStar\Desktop\GraphicsAssignments\support\course.hpp">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\AdminStar\Desktop\GraphicsAssignments\student\a1\mesh.hpp">
+      <Filter>Assignments\a1</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\AdminStar\Desktop\GraphicsAssignments\student\a2\objects.hpp">
+      <Filter>Assignments\a2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\AdminStar\Desktop\GraphicsAssignments\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assignments">
+      <UniqueIdentifier>{ECAEAEF7-381A-39D3-91E0-F6E2C737F52E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assignments\a1">
+      <UniqueIdentifier>{F72DD317-E24E-35E8-8247-D6493BDEFBDF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assignments\a2">
+      <UniqueIdentifier>{562D5322-772C-3898-A632-1EBABE3BA85A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{71745CBF-7958-331D-8F43-7E5F697C30D9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C27F66C9-A181-392A-BBCB-B63F5389FF67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Support">
+      <UniqueIdentifier>{C4BF9F4A-F43B-34B8-B5A9-268D9FA2CD3B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
