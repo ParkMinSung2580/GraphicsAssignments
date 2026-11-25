@@ -108,12 +108,28 @@ inline void createMesh(Mesh& mesh,const std::vector<Vertex>& vertices,const std:
     glCreateBuffers(1, &mesh.vbo);
     glNamedBufferStorage(mesh.vbo, vertices.size() * sizeof(Vertex), vertices.data(), 0);
 
+    //ebo의 데이터 저장은 unsigned int 값  총 버퍼의 크기는 indices 벡터 사이즈 * unsigned int의 크기
     glCreateBuffers(1, &mesh.ebo);
     glNamedBufferStorage(mesh.ebo, indices.size() * sizeof(unsigned int), indices.data(), 0);
 
     // TODO A1.4: create VAO, attach VBO to binding 0, attach EBO.
     // Hint: Use glCreateVertexArrays, glVertexArrayVertexBuffer(vao, binding, buffer, offset, stride), and glVertexArrayElementBuffer.
     // Binding index 0; offset 0; stride sizeof(Vertex).
+    #pragma region glVertexArrayVertexBuffer 함수
+    /*
+    * glVertexArrayVertexBuffer( 
+        vao,            연결할 VAO
+        bindingindex,   VAO 내부의 버퍼 바인딩 인덱스
+        buffer,         연결할 VBO
+        offset,         버퍼 데이터의 시작 위치
+        stride          정점 하나의 크기(바이트)
+    );
+    */
+    #pragma endregion
+    
+    glCreateVertexArrays(1, &mesh.vao);
+    glVertexArrayVertexBuffer(mesh.vao, 0, mesh.vbo, 0, sizeof(Vertex));
+    glVertexArrayElementBuffer(mesh.vao, mesh.ebo);
    
     // TODO A1.5: configure position (location 0, 2 floats) and color (location 1, 3 floats).
     // Hint: Use glVertexArrayAttribFormat, glVertexArrayAttribBinding, and glEnableVertexArrayAttrib. Use offsetof(Vertex, x) / offsetof(Vertex, r) for byte offsets.
