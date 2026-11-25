@@ -41,6 +41,7 @@ inline std::vector<Vertex> houseVertices()
 #pragma endregion
 
     //0: 좌하단,1 : 우하단,2 : 우상단,3 : 좌상단
+    vector<Vertex> walls // 정점 4개
     {
         {-0.4f, -0.4f, 0.9f, 0.7f, 0.4f},
         {0.4f, -0.4f, 0.9f, 0.7f, 0.4f},
@@ -102,7 +103,13 @@ inline void createMesh(Mesh& mesh,const std::vector<Vertex>& vertices,const std:
     // Hint: Use glCreateBuffers(count, names) and glNamedBufferStorage(buffer, byteSize, data, flags). Use size() * sizeof(element type) and data().
     // Create names in mesh.vbo / mesh.ebo and upload the supplied arrays.
     
+    //버퍼 사이즈를 직접 계산해야한다. 정점의 각 크기 * 정점들을 담고 있는 벡터의 크기 -> 총 버퍼의 크기, data가 데이터 시작 주소 vertices.data() -> 시작주소 반환
+    //flag는 무슨 역할인가 일단 모르니깐 0으로 하고
     glCreateBuffers(1, &mesh.vbo);
+    glNamedBufferStorage(mesh.vbo, vertices.size() * sizeof(Vertex), vertices.data(), 0);
+
+    glCreateBuffers(1, &mesh.ebo);
+    glNamedBufferStorage(mesh.ebo, indices.size() * sizeof(unsigned int), indices.data(), 0);
 
     // TODO A1.4: create VAO, attach VBO to binding 0, attach EBO.
     // Hint: Use glCreateVertexArrays, glVertexArrayVertexBuffer(vao, binding, buffer, offset, stride), and glVertexArrayElementBuffer.
